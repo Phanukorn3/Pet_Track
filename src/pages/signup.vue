@@ -22,6 +22,21 @@ export default {
         return;
       }
 
+      if (!this.username || !this.email || !this.password) {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      if (this.password.length < 6) {
+        alert("Password must be at least 6 characters long!");
+        return;
+      }
+
+      if (!this.email.includes("@")) {
+        alert("Please enter a valid email address!");
+        return;
+      }
+
       const formData = {
         username: this.username,
         email: this.email,
