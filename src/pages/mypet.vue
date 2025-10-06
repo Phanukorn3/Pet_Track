@@ -4,6 +4,8 @@ import Nav from "@/components/nav.vue";
 import profilepic from "@/assets/user_profile.png";
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import profilepic from "@/assets/user_profile.png";
+
 // for test เด้อ ***** เปลี่ยนเป็นค่าที่ดึงมาจาก database
 const pets = ref([
   { id: 1, name: "Milo", image: profilepic },
@@ -20,7 +22,6 @@ const pets = ref([
   { id: 3, name: "Bobby", image: profilepic },
 ]);
 
-const pets = ref([]);
 onMounted(async () => {
   try {
     const res = await axios.get("/api/pets"); // เปลี่ยนเป็น endpoint จริง รอต้า
@@ -31,7 +32,6 @@ onMounted(async () => {
 });
 
 </script>
-
 <template>
   <div class="relative min-h-screen flex items-center justify-center">
     <!-- รูปพื้นหลัง -->
