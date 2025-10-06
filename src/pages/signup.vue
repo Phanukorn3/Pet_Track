@@ -47,6 +47,7 @@ export default {
         const res = await api.post("/signup", formData);
         console.log("Registered:", res.data);
         alert("Sign up successful!");
+        this.$router.push("/login")
       } catch (err) {
         console.error(err);
         alert("Something went wrong");

@@ -9,7 +9,7 @@ import axios from "axios";
 const pets = ref([]);
 onMounted(async () => {
   try {
-    const res = await axios.get("/api/pets"); // เปลี่ยนเป็น endpoint จริง รอต้า
+    const res = await axios.get("api/pets"); // เปลี่ยนเป็น endpoint จริง รอต้า
     pets.value = res.data;
   } catch (err) {
     console.error("Failed to fetch pets:", err);
@@ -30,11 +30,6 @@ async function deletePet(id) {
 <template>
   <div class="relative min-h-screen flex items-center justify-center">
     <!-- รูปพื้นหลัง -->
-    <div
-      class="absolute inset-0 bg-[url('@/assets/map.jpg')] bg-cover bg-center"
-    ></div>
-
-    <!-- ชั้น overlay สีเทาโปร่ง -->
     <div class="absolute inset-0 bg-gray-500/70"></div>
 
     <!-- เนื้อหาด้านใน -->

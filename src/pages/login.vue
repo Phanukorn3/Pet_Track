@@ -24,7 +24,8 @@ export default {
       try {
         const res = await api.post("/login", loginData);
         console.log("Login response:", res.data);
-        alert("Login successful! Token: " + res.data.token);
+        alert("Login successful!");
+        this.$router.push("/")
       } catch (err) {
         console.error(err);
         alert(
@@ -56,6 +57,7 @@ export default {
           placeholder="Enter your password"
           v-model="password"
         />
+        <!-- ยังไม่ได้แก้ -->
         <a
           href="#"
           class="text-sm text-[#EA580C]/60 ml-35 mt-0 transition-all duration-300 hover:text-[#EA580C]"
