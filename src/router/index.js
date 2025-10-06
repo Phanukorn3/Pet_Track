@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '@/pages/login.vue';
 import SignUp from '@/pages/signUp.vue';
-import Overview from '../pages/overview.vue';
+import Overview from '@/pages/overview.vue';
+import MyPet from '@/pages/mypet.vue';
+import PetAdd from '@/pages/petadd.vue';
+import Profile from '@/pages/userprofile.vue';
 
 const routes = [
   { path: '/', component: Overview },
   { path: '/auth/login', component: Login },
   { path: '/auth/signup', component: SignUp },
+  { path: '/mypets', component: MyPet },
+  { path: '/profile', component: Profile },
+  { path: '/mypets/petadd', component: PetAdd },
 ];
 
 const router = createRouter({

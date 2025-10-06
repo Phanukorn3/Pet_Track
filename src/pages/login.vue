@@ -22,9 +22,10 @@ export default {
       console.log("Logging in:", loginData);
 
       try {
-        const res = await api.post("/login", loginData);
+        const res = await api.post("/auth/login", loginData);
         console.log("Login response:", res.data);
-        alert("Login successful! Token: " + res.data.token);
+        alert("Login successful!");
+        this.$router.push("/")
       } catch (err) {
         console.error(err);
         alert(
