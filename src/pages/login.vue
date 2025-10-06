@@ -22,17 +22,16 @@ export default {
       console.log("Logging in:", loginData);
 
       try {
-        const res = await api.post("/auth/login", loginData);
+        const res = await api.post("/login", loginData);
         console.log("Login response:", res.data);
-        alert("Login successful!");
-        this.$router.push("/");
+        alert("Login successful! Token: " + res.data.token);
       } catch (err) {
-          console.error(err);
-          alert(
-            "Login failed: " +
-              (err.response?.data?.message || "Something went wrong")
-          );
-        }
+        console.error(err);
+        alert(
+          "Login failed: " +
+            (err.response?.data?.message || "Something went wrong")
+        );
+      }
     },
   },
 };
@@ -71,7 +70,7 @@ export default {
 
         <p class="mt-4 text-xs ml-55">
           Don't have an account?
-          <router-link to="/auth/signup" class="text-[#EA580C]">Sign Up</router-link>
+          <router-link to="/signup" class="text-[#EA580C]">Sign Up</router-link>
         </p>
       </div>
 
