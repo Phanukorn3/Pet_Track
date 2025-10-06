@@ -18,8 +18,8 @@ import Nav from "@/components/nav.vue";
       >
 
         <Nav />
-
       <div class="flex-1">
+        
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '@/pages/login.vue';
+import Resetpassword from '@/pages/resetpassword.vue';
 import SignUp from '@/pages/signUp.vue';
 import Overview from '@/pages/overview.vue';
 import MyPet from '@/pages/mypet.vue';
@@ -9,6 +10,7 @@ import Profile from '@/pages/userprofile.vue';
 const routes = [
   { path: '/', component: Overview },
   { path: '/login', component: Login },
+  { path: '/resetpassword', component: Resetpassword },
   { path: '/signup', component: SignUp },
   { path: '/mypet', component: MyPet },
   { path: '/profile', component: Profile },

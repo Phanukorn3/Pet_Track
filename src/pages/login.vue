@@ -58,10 +58,10 @@ export default {
           v-model="password"
         />
         <!-- ยังไม่ได้แก้ -->
-        <a
-          href="#"
+        <router-link
+          to="/resetpassword"
           class="text-sm text-[#EA580C]/60 ml-35 mt-0 transition-all duration-300 hover:text-[#EA580C]"
-          >Forgot Password?</a
+          >Forgot Password?</router-link
         >
         <button
           @click="handleLogin"

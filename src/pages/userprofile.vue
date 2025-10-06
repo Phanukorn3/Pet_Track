@@ -12,7 +12,6 @@ function handleFileChange(event) {
   file.value = selectedFile;
   userImage.value = URL.createObjectURL(selectedFile);
 }
-
 // --- ข้อมูลผู้ใช้ ---
 const name = ref("Bibi");
 const email = ref("bibi@example.com");

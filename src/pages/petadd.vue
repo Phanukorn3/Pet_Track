@@ -4,6 +4,9 @@ import Nav from "@/components/nav.vue";
 import TextInput from "@/components/textInput.vue";
 import ChooseImage from "@/assets/choose_image.png";
 import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const petName = ref("");
 const petAge = ref("");
@@ -24,39 +27,39 @@ function handleFileChange(event) {
 async function handleSubmit() {
 
     if (!file.value) {
-    alert("กรุณาใส่รูปภาพสัตว์เลี้ยง");
+    alert("Please select the image.");
     return false;
   }
 
   // ชื่อสัตว์เลี้ยง
   if (!petName.value || typeof petName.value !== "string" || petName.value.trim() === "") {
-    alert("กรุณาใส่ชื่อสัตว์เลี้ยงเป็นข้อความที่ถูกต้อง");
+    alert("Please enter your pet's name as a message.");
     return false;
   }
 
   // อายุสัตว์เลี้ยง (ต้องเป็นตัวเลขบวก)
   const ageNum = Number(petAge.value);
   if (!petAge.value || isNaN(ageNum) || ageNum <= 0) {
-    alert("กรุณาใส่อายุสัตว์เลี้ยงเป็นตัวเลข");
+    alert("Please enter your pet's age in numbers.");
     return false;
   }
 
   // เพศสัตว์เลี้ยง
   if (!petSex.value || !["male", "female"].includes(petSex.value)) {
-    alert("กรุณาเลือกเพศสัตว์เลี้ยง");
+    alert("Please select the pet's gender.");
     return false;
   }
 
   // น้ำหนักสัตว์เลี้ยง (ต้องเป็นตัวเลขบวก)
   const weightNum = Number(petWeight.value);
   if (!petWeight.value || isNaN(weightNum) || weightNum <= 0) {
-    alert("กรุณาใส่น้ำหนักสัตว์เลี้ยงเป็นตัวเลข");
+    alert("Please enter your pet's weight in numbers.");
     return false;
   }
 
   // อาหารที่ชื่นชอบ
   if (!petFavoriteFood.value || petFavoriteFood.value.trim() === "" || typeof petFavoriteFood.value !== "string") {
-    alert("กรุณาใส่อาหารที่สัตว์เลี้ยงชอบ");
+    alert("Please enter your pet's favorite food.");
     return false;
   }
 
@@ -74,6 +77,8 @@ async function handleSubmit() {
     });
     console.log("Added pet:", res.data);
     alert("Add pet successfully!");
+    router.push("/mypet")
+    
     // ล้างฟอร์ม
     petName.value = "";
     petAge.value = "";
