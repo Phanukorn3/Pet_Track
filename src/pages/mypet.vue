@@ -24,7 +24,7 @@ const pets = ref([
 
 onMounted(async () => {
   try {
-    const res = await axios.get("/api/pets"); // เปลี่ยนเป็น endpoint จริง รอต้า
+    const res = await axios.get("/"); // เปลี่ยนเป็น endpoint จริง รอต้า
     pets.value = res.data;
   } catch (err) {
     console.error("Failed to fetch pets:", err);

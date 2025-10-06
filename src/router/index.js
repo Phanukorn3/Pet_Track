@@ -5,8 +5,8 @@ import Overview from '../pages/overview.vue';
 
 const routes = [
   { path: '/', component: Overview },
-  { path: '/login', component: Login },
-  { path: '/signup', component: SignUp },
+  { path: '/auth/login', component: Login },
+  { path: '/auth/signup', component: SignUp },
 ];
 
 const router = createRouter({

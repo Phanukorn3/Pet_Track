@@ -70,7 +70,7 @@ export default {
 
         <p class="mt-4 text-xs ml-55">
           Don't have an account?
-          <router-link to="/signup" class="text-[#EA580C]">Sign Up</router-link>
+          <router-link to="/auth/signup" class="text-[#EA580C]">Sign Up</router-link>
         </p>
       </div>
 

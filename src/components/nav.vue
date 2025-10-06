@@ -17,7 +17,7 @@ function handleProfileChange(event) {
   if (value === "profile") {
     router.push("/profile");
   } else if (value === "logout") {
-    router.push("/login");
+    router.push("/auth/login");
   }
 
   event.target.value = "";
@@ -28,8 +28,8 @@ function handleProfileChange(event) {
     <div class="container mx-auto flex justify-between items-center">
       <Logo />
       <div class="flex space-x-4">
-        <router-link to="/login" class="text-[#EA580C]">Login</router-link>
-        <router-link to="/signup" class="text-[#EA580C]">Sign Up</router-link>
+        <router-link to="/auth/login" class="text-[#EA580C]">Login</router-link>
+        <router-link to="/auth/signup" class="text-[#EA580C]">Sign Up</router-link>
       </div>
       <!-- border-2 border-gray-300 bg-[#FFF7E2] rounded-3xl p-1.5 -->
       <div class="flex space-x-4 ml-75">
