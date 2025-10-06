@@ -32,7 +32,6 @@ async function deletePet(id) {
     <!-- รูปพื้นหลัง -->
     <div class="absolute inset-0 bg-gray-500/70"></div>
 
-    <!-- เนื้อหาด้านใน -->
     <!-- ตรงส่วนนี้ยังไม่ได้ทำให้ scroll ลงได้ ยังหาวิธีทำอยู่ -->
     <div
       class="relative bg-[#F4D9A2] p-8 rounded-2xl shadow-lg flex flex-col w-320 h-200"

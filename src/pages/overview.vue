@@ -13,11 +13,10 @@ import Nav from "@/components/nav.vue";
       <!-- ชั้น overlay สีเทาโปร่ง -->
       <div class="absolute inset-0 bg-gray-500/70"></div>
       
-      <!-- เนื้อหาด้านใน -->
       <div
       class="relative bg-[#F4D9A2] p-8 rounded-2xl shadow-lg flex w-320 h-200"
       >
- 
+
         <Nav />
 
       <div class="flex-1">
