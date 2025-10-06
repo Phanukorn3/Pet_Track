@@ -15,6 +15,16 @@ onMounted(async () => {
     console.error("Failed to fetch pets:", err);
   }
 });
+async function deletePet(id) {
+  try {
+    await axios.delete(`/api/pets/${id}`);
+    pets.value = pets.value.filter((pet) => pet.id !== id);
+    alert("Pet deleted successfully");
+  } catch (err) {
+    console.error("Failed to delete pet:", err);
+    alert("Failed to delete pet");
+  }
+}
 </script>
 
 <template>
@@ -46,14 +56,20 @@ onMounted(async () => {
           <div
             v-for="pet in pets"
             :key="pet.id"
-            class="flex flex-col items-center w-[calc(100%/6rem)]"
+            class="relative flex flex-col items-center w-40 group"
           >
             <img
               class="w-40 h-40 rounded-full object-cover flex-shrink-0 border border-gray-300"
               :src="pet.image"
               :alt="pet.name"
             />
-            <p class="mt-2 text-sm text-gray-800">{{ pet.name }}</p>
+            <button
+              @click="deletePet(pet.id)"
+              class="absolute top-0 left-0 w-40 h-40 flex items-center justify-center text-red-700 text-sm font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+            >
+              Delete
+            </button>
+            <p class="mt-2 text-md text-[#B26D38]">{{ pet.name }}</p>
           </div>
         </div>
       </div>
