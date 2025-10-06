@@ -1,4 +1,3 @@
-
 <script setup>
 import Logo from "@/components/logo.vue";
 import UserProfile from "@/assets/user_profile.png";
@@ -25,8 +24,8 @@ function handleProfileChange(event) {
 }
 </script>
 <template>
-  <nav class="bg-[#FFF7E2]/62 p-4 shadow-md w-full h-18 rounded-2xl">
-    <div class="container mx-auto flex items-center h-11">
+  <nav class="bg-[#FFF7E2] p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
       <Logo />
       <div class="flex space-x-4">
         <router-link to="/login" class="text-[#EA580C]">Login</router-link>

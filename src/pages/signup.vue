@@ -21,20 +21,6 @@ export default {
         alert("Passwords do not match!");
         return;
       }
-      if (!this.username || !this.email || !this.password) {
-        alert("Please fill in all fields!");
-        return;
-      }
-
-      if (this.password.length < 6) {
-        alert("Password must be at least 6 characters long!");
-        return;
-      }
-
-      if (!this.email.includes("@")) {
-        alert("Please enter a valid email address!");
-        return;
-      }
 
       if (!this.username || !this.email || !this.password) {
         alert("Please fill in all fields!");
@@ -58,13 +44,12 @@ export default {
       };
       console.log("Submitting:", formData);
       try {
-        const res = await api.post("/auth/signup", formData);
+        const res = await api.post("/signup", formData);
         console.log("Registered:", res.data);
         alert("Sign up successful!");
-        this.$router.push("/auth/login");
       } catch (err) {
-          console.error(err);
-          alert("Something went wrong");
+        console.error(err);
+        alert("Something went wrong");
       }
     },
   },
@@ -116,7 +101,7 @@ export default {
           Don't have an account? <a href="#" class="text-[#EA580C]">Sign Up</a>
         </p> -->
         <router-link
-          to="/auth/login"
+          to="/login"
           class="ml-40 mt-4 flex items-center text-sm group"
         >
           <svg
