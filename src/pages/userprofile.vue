@@ -17,7 +17,6 @@ import Nav from "@/components/nav.vue";
     <div
       class="relative bg-[#F4D9A2] p-8 rounded-2xl shadow-lg flex flex-col w-320 h-200"
     >
-      <Nav/>
         <div class="bg-[#FFF7E2]/62 p-4 shadow-md w-full h-full rounded-2xl mt-8"></div>
     </div>
   </div>
