@@ -1,5 +1,4 @@
 <script setup>
-// import api from "@/service/api.js";
 import Nav from "@/components/nav.vue";
 import { ref, onMounted } from "vue";
 import axios from "axios";

@@ -12,7 +12,8 @@ const petName = ref("");
 const petAge = ref("");
 const petSex = ref("");
 const petWeight = ref("");
-const petFavoriteFood = ref("");
+const petType = ref("");
+const petDescription = ref("");
 
 const petImage = ref(null); // preview URL
 const file = ref(null); // เก็บไฟล์จริง
@@ -56,9 +57,13 @@ async function handleSubmit() {
     alert("Please enter your pet's weight in numbers.");
     return false;
   }
+  if (!petType.value || typeof petType.value !== "string") {
+    alert("Please enter your pet's type in message.");
+    return false;
+  }
 
   // อาหารที่ชื่นชอบ
-  if (!petFavoriteFood.value || petFavoriteFood.value.trim() === "" || typeof petFavoriteFood.value !== "string") {
+  if (!petDescription.value || petDescription.value.trim() === "" || typeof petDescription.value !== "string") {
     alert("Please enter your pet's favorite food.");
     return false;
   }
@@ -68,7 +73,8 @@ async function handleSubmit() {
   formData.append("age", petAge.value);
   formData.append("sex", petSex.value);
   formData.append("weight", petWeight.value);
-  formData.append("favoriteFood", petFavoriteFood.value);
+  formData.append("type", petType.value);
+  formData.append("description", petDescription.value);
   formData.append("image", file.value);
 
   try {
@@ -84,7 +90,8 @@ async function handleSubmit() {
     petAge.value = "";
     petSex.value = "";
     petWeight.value = "";
-    petFavoriteFood.value = "";
+    petType.value = "";
+    petDescription.value = "";
     petImage.value = null;
     file.value = null;
   } catch (err) {
@@ -153,16 +160,24 @@ async function handleSubmit() {
               </select>
             </div>
           </div>
+          <div class="flex gap-5">
           <TextInput
             v-model="petWeight"
             label="Weight"
             placeholder="Enter pet weight"
-            class="w-140"
+            class="w-65"
           />
           <TextInput
-            v-model="petFavoriteFood"
-            label="Favorite Food"
-            placeholder="Enter pet favorite food"
+            v-model="petType"
+            label="Type of pet"
+            placeholder="Enter type of pet"
+            class="w-70"
+          />
+        </div>
+          <TextInput
+            v-model="petDescription"
+            label="Pet Description"
+            placeholder="Enter pet description"
             class="w-140"
           />
           <button

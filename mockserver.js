@@ -69,7 +69,7 @@ app.get("/pets", (req, res) => {
 
 // POST new pet (รองรับ file upload)
 app.post("/pets", upload.single("image"), (req, res) => {
-  const { name, age, sex, weight, favoriteFood } = req.body;
+  const { name, age, sex, weight, type,description } = req.body;
   const file = req.file;
 
   if (!name || !file) {
@@ -82,7 +82,8 @@ app.post("/pets", upload.single("image"), (req, res) => {
     age,
     sex,
     weight,
-    favoriteFood,
+    type,
+    description,
     image: `http://localhost:3000/uploads/${file.filename}`,
   };
 
